@@ -1,0 +1,181 @@
+<!--
+  ~ Copyright (c) 2021 Dragon1573. All rights reserved.
+  ~
+  ~ This Source Code Form is subject to the terms of the Mozilla
+  ~ Public License, v. 2.0. If a copy of the MPL was not distributed
+  ~ with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+  ~
+  ~ This Source Code Form is “Incompatible With Secondary Licenses”,
+  ~ as defined by the Mozilla Public License, v. 2.0.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>wang.dragon1573</groupId>
+  <artifactId>jip4fg</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+
+  <name>spark</name>
+  <description>JIP4FG的Spark机器学习部分</description>
+  <url>https://github.com/Cyxxxxx/JIP4FG/tree/feature/spark</url>
+
+  <scm>
+    <connection>scm:git:ssh://git@github.com:Cyxxxxx/JIP4FG.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com:Cyxxxxx/JIP4FG.git</developerConnection>
+    <tag>features/spark</tag>
+    <url>https://github.com/Cyxxxxx/JIP4FG/tree/feature/spark</url>
+  </scm>
+
+  <developers>
+    <developer>
+      <email>732298225@qq.com</email>
+      <id>Cyxxxxx</id>
+      <name>yuc</name>
+      <organization>Foshan University</organization>
+      <organizationUrl>https://web.fosu.edu.cn/</organizationUrl>
+      <roles>
+        <role>Owner</role>
+      </roles>
+      <timezone>8</timezone>
+      <url>https://github.com/Cyxxxxx</url>
+    </developer>
+    <developer>
+      <email>Legend_1949@126.com</email>
+      <id>Dragon1573</id>
+      <name>べ断桥烟雨ミ</name>
+      <organization>Foshan University</organization>
+      <organizationUrl>https://web.fosu.edu.cn/</organizationUrl>
+      <roles>
+        <role>Contributor</role>
+      </roles>
+      <timezone>8</timezone>
+      <url>https://github.com/Dragon1573</url>
+    </developer>
+  </developers>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
+    <scala.majorVersion>2.11</scala.majorVersion>
+    <scala.minorVersion>12</scala.minorVersion>
+    <spark.version>2.4.0-cdh6.2.1</spark.version>
+  </properties>
+
+  <build>
+    <sourceDirectory>src/scala</sourceDirectory>
+    <plugins>
+      <plugin>
+        <groupId>org.scala-tools</groupId>
+        <artifactId>maven-scala-plugin</artifactId>
+        <version>${scala.majorVersion}</version>
+        <executions>
+          <execution>
+            <id>scala-compile</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>scala-test-compile</id>
+            <phase>test-compile</phase>
+            <goals>
+              <goal>testCompile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.2.1</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>central</id>
+      <name>Huawei Mirrors</name>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <url>https://repo.huaweicloud.com/repository/maven/</url>
+    </repository>
+    <repository>
+      <id>cloudera</id>
+      <name>Cloudera Mirrors</name>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <!-- Scala 编译器 -->
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-compiler</artifactId>
+      <version>${scala.majorVersion}.${scala.minorVersion}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-library</artifactId>
+      <version>${scala.majorVersion}.${scala.minorVersion}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-reflect</artifactId>
+      <version>${scala.majorVersion}.${scala.minorVersion}</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- Spark 机器学习 -->
+    <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-mllib_${scala.majorVersion}</artifactId>
+      <version>${spark.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-sql_${scala.majorVersion}</artifactId>
+      <version>${spark.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-hive_${scala.majorVersion}</artifactId>
+      <version>${spark.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- 结巴分词 Java 版 -->
+    <dependency>
+      <groupId>com.huaban</groupId>
+      <artifactId>jieba-analysis</artifactId>
+      <version>1.0.2</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+</project>

@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Table Spliting" type="DatabaseScript">
+    <script-file value="$PROJECT_DIR$/scripts/hive-utilities.sql" />
+    <script-mode>FILE</script-mode>
+    <data-source id="74e1fa2a-b868-436c-a412-6e6f1af3cd25" />
+    <method v="2" />
+  </configuration>
+</component>

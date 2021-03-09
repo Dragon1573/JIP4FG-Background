@@ -1,0 +1,5 @@
+# Created by Users
+
+# These files are test-only scripts.
+# For release use, just execute `spiders crawl ...` commands to launch the Scrapy.
+test*

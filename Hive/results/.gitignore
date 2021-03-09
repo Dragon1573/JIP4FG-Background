@@ -1,0 +1,22 @@
+# Created by https://www.toptal.com/developers/gitignore/api/Data
+# Edit at https://www.toptal.com/developers/gitignore?templates=Data
+
+### Data ###
+*.csv
+*.dat
+*.efx
+*.gbr
+*.key
+*.pps
+*.ppt
+*.pptx
+*.sdf
+*.tax2010
+*.vcf
+*.xml
+
+# End of https://www.toptal.com/developers/gitignore/api/Data
+
+# User defined datasets
+
+*.jsonl*

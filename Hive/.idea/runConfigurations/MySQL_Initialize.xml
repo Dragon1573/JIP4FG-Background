@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="MySQL Initialize" type="DatabaseScript">
+    <script-file value="$PROJECT_DIR$/../../database/mysql/jip4fg.sql" />
+    <script-mode>FILE</script-mode>
+    <data-source id="04dd2e8a-71da-4436-9343-426ef39f307a" namespace="schema/&quot;jip4pg&quot;" />
+    <method v="2" />
+  </configuration>
+</component>
