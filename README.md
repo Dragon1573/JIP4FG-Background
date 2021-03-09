@@ -2,6 +2,12 @@
 
 [![License under MPL-2.0](https://img.shields.io/github/license/Dragon1573/JIP4FG-Background?color=blue&lable=License)](https://github.com/Dragon1573/JIP4FG-Background/blob/main/LICENSE)
 
+## NOTICE
+
+**This repository has been archived!**
+
+## Introduction
+
 This project is the background datasets processing and analysis service of
 Cyxxxxx/JIP4FG, including following services:
 
